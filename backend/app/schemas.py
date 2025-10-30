@@ -1,7 +1,8 @@
-from pydantic import BaseModel, Field, ConfigDict
+# backend/app/schemas.py
+from pydantic import BaseModel
+from typing import Optional
 
 class LoreRequest(BaseModel):
-    model_version: str
     prompt: str
-
-    model_config = ConfigDict(protected_namespaces=())
+    model_version: Optional[str] = "v1"
+    model_config = {"protected_namespaces": ()}

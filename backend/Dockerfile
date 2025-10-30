@@ -1,13 +1,9 @@
-# backend/Dockerfile
 FROM python:3.12-slim
 
 WORKDIR /app
-
-RUN pip install --upgrade pip
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy ENTIRE app folder
 COPY backend/app ./app
 COPY frontend/streamlit_app.py .
 
